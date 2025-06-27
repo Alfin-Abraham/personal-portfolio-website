@@ -418,6 +418,11 @@
     <section id="contact" class="max-w-3xl mx-auto py-10 px-6 backdrop-blur-md dark:bg-zinc-800/25 rounded-3xl shadow-lg">
       <h2 class="text-4xl font-bold mb-6">Hit Me Up!</h2>
       
+      <!-- dummy hidden form -->
+      <form name="contact-form" netlify hidden>
+        <input type="hidden" name="form-name" value="contact-form">
+      </form>
+      
       <form id="contact-form" name="contact-form" method="POST" data-netlify="true" action="/" class="space-y-5">
          <input type="hidden" name="form-name" value="contact-form">
          <!-- Form inputs -->
