@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-py-12">
+<head>
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alfin Abraham</title>
+  <!-- icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/favicon_io/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./assets/images/favicon_io/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_io/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon_io/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_io/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon-32x32.png">
+  <link rel="manifest" href="./assets/images/favicon_io/site.webmanifest">
+  <!-- tailwind import -->
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Space reserved at the top for fixed nav */
+    body {
+      padding-top: 4rem;
+    }
+    /* Fullscreen background canvas styling */
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+  <!-- Bootstrap carousel setup -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .bootstrap-carousel-scope .carousel {
+      position: relative;
+    }
+    .bootstrap-carousel-scope .carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .bootstrap-carousel-scope .carousel-item {
+      position: relative;
+      display: none;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%;
+      transition: transform .3s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+    }
+    .bootstrap-carousel-scope .carousel-item.active,
+    .bootstrap-carousel-scope .carousel-item-next,
+    .bootstrap-carousel-scope .carousel-item-prev {
+      display: block;
+    }
+    .bootstrap-carousel-scope .carousel-item-next,
+    .bootstrap-carousel-scope .carousel-item-prev {
+      position: absolute;
+      top: 0;
+    }
+    .bootstrap-carousel-scope .carousel-item-next.carousel-item-left,
+    .bootstrap-carousel-scope .carousel-item-prev.carousel-item-right {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    @supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)) {
+      .bootstrap-carousel-scope .carousel-item-next.carousel-item-left,
+      .bootstrap-carousel-scope .carousel-item-prev.carousel-item-right {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+      }
+    }
+    .bootstrap-carousel-scope .carousel-item-next,
+    .bootstrap-carousel-scope .active.carousel-item-right {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    @supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)) {
+      .bootstrap-carousel-scope .carousel-item-next,
+      .bootstrap-carousel-scope .active.carousel-item-right {
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
+      }
+    }
+    .bootstrap-carousel-scope .carousel-item-prev,
+    .bootstrap-carousel-scope .active.carousel-item-left {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+    @supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)) {
+      .bootstrap-carousel-scope .carousel-item-prev,
+      .bootstrap-carousel-scope .active.carousel-item-left {
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+      }
+    }
+    .bootstrap-carousel-scope .carousel-control-prev,
+    .bootstrap-carousel-scope .carousel-control-next {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 15%;
+      color: #fff;
+      text-align: center;
+      opacity: .7;
+    }
+    .bootstrap-carousel-scope .carousel-control-prev:hover,
+    .bootstrap-carousel-scope .carousel-control-prev:focus,
+    .bootstrap-carousel-scope .carousel-control-next:hover,
+    .bootstrap-carousel-scope .carousel-control-next:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      opacity: .9;
+    }
+    .bootstrap-carousel-scope .carousel-control-prev {
+      left: 0;
+    }
+    .bootstrap-carousel-scope .carousel-control-next {
+      right: 0;
+    }
+    .bootstrap-carousel-scope .carousel-control-prev-icon,
+    .bootstrap-carousel-scope .carousel-control-next-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+    }
+    .bootstrap-carousel-scope .carousel-control-prev-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+    .bootstrap-carousel-scope .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+    .bootstrap-carousel-scope .visually-hidden {
+        position: absolute!important;
+        width: 1px!important;
+        height: 1px!important;
+        padding: 0!important;
+        margin: -1px!important;
+        overflow: hidden!important;
+        clip: rect(0,0,0,0)!important;
+        white-space: nowrap!important;
+        border: 0!important;
+    }
+  </style>
+</head>
+
+
+<body class="dark:bg-zinc-900 dark:text-gray-100">
+  <canvas id="background"></canvas>
+  <!-- Navigation bar (fixed to top) -->
+  <nav class="fixed inset-x-0 top-0 dark:bg-zinc-800/80 backdrop-blur-sm shadow-lg z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <a href="#" class="text-3xl font-bold w-fit">Alfin Abraham</a>
+      <!-- Mobile menu toggle button -->
+      <button id="nav-toggle" class="sm:hidden flex items-center p-2 focus:outline-none" aria-label="Toggle menu">
+        <svg class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentcolor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <!-- Desktop navigation links -->
+      <div id="nav-menu" class="hidden sm:flex items-center space-x-5 px-4">
+        <a href="#about" class="hover:underline font-medium">About</a>
+        <a href="#work" class="hover:underline font-medium">Work</a>
+        <a href="#education" class="hover:underline font-medium">Education</a>
+        <a href="#projects" class="hover:underline font-medium">Projects</a>
+        <a href="#skills" class="hover:underline font-medium">Skills</a>
+        <a href="#languages" class="hover:underline font-medium">Languages</a>
+        <a href="#contact" class="hover:underline font-medium">Contact</a>
+      </div>
+      <!-- Desktop action buttons -->
+      <div class="hidden sm:flex items-center space-x-4">
+        <a href="https://www.linkedin.com/in/alfin-abraham/" target="_blank" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-3 py-2 rounded-2xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl transition-all">LinkedIn</a>
+        <a href="https://github.com/alfin-abraham" target="_blank" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-3 py-2 rounded-2xl bg-zinc-600 text-white font-semibold shadow hover:shadow-xl transition-all">GitHub</a>
+        <a href="./assets/hosted-resume/Alfin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-4 py-2 rounded-2xl bg-green-600 text-white font-semibold shadow hover:shadow-xl transition-all">Résumé</a>
+      </div>
+    </div>
+    <!-- Mobile menu links -->
+    <div id="mobile-menu" class="hidden sm:hidden flex flex-col items-center space-y-4 p-8 /90 dark:bg-zinc-800/75 backdrop-blur-sm shadow-lg">
+      <a href="https://www.linkedin.com/in/alfin-abraham/" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl transition-all">LinkedIn</a>
+      <a href="https://github.com/alfin-abraham" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-zinc-600 text-white font-semibold shadow hover:shadow-xl transition-all">GitHub</a>
+      <a href="./assets/hosted-resume/Alfin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="w-full text-center px-3 py-3 rounded-3xl bg-green-600 text-white font-semibold shadow hover:shadow-xl transition-all">Résumé</a>
+    </div>
+  </nav>
+
+  
+  <!-- Main content starts here -->
+  <main class="space-y-2">
+    <!-- Section-1: About me -->
+    <section id="about" class="max-w-6xl mx-auto py-16 px-2">
+      <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">About Me</h2>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="dark:bg-zinc-800/70 backdrop-blur-md border dark:border-gray-700 rounded-full shadow-lg p-4 flex-shrink-0 aspect-square w-40 md:w-48 lg:w-56">
+          <img src="./assets/images/Alfin.jpeg" alt="Alfin-Headshot" class="w-full h-full rounded-full object-cover">
+        </div>
+        <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg font-medium text-base font-mono px-12 py-6">
+          <p class="hover:text-yellow-300">I am a Computer Science graduate with a specialization in Data Science, skilled in machine learning, AI, and cloud technologies.</p>
+            <p class="hover:text-yellow-300">I'm passionate about building data-driven, impactful solutions that solve real-world challenges.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Section-2: Work Experience -->
+    <section id="work" class="max-w-6xl mx-auto py-16 px-2">
+      <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Work Experience</h2>
+      <div class="flex flex-col space-y-6 gap-8">
+        <!-- CDF -->
+        <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg px-6 py-4 flex items-center gap-4">
+          <img src="./assets/images/CDF.jpeg" alt="Community Dreams Foundation" class="w-12 h-12 rounded-lg shadow">
+          <div>
+            <h3 class="text-2xl py-2 font-semibold">Data Analyst @
+              <a href="https://www.cdreams.org/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Community Dreams Foundation</a>
+            </h3>
+            <p class="text-md text-gray-600 dark:text-zinc-200 text-large font-mono hover:text-yellow-300">
+              Sep 2024 - Present<br>
+              Wethersﬁeld, CT, USA (Remote)<br>
+              <ul class="list-disc p-3 space-y-4 text-lg font-mono">
+                <li class="hover:text-yellow-300">Designed and implemented a scalable synthetic data pipeline to train CDF's in-house, ML-powered resume analyzer, enhancing data quality across 35+ job profiles with a focus on industry trends, role relevance, and privacy compliance.</li>
+                <li class="hover:text-yellow-300">Leveraged LLMs (ChatGPT-4o, Claude 3.5 Sonnet) with custom prompt engineering to generate realistic, role-specific resumes, enabling high-accuracy model performance (96.2%) and ultimately improving HR workflows.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <!-- IIT-I -->
+        <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg px-6 py-4 flex items-center gap-4">
+          <img src="./assets/images/IIT-I.jpeg" alt="Indian Institute of Technology Indore" class="w-12 h-12 rounded-lg shadow">
+          <div>
+            <h3 class="text-2xl py-2 font-semibold">Machine Learning Researcher @
+              <a href="https://www.iiti.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Indian Institute of Technology Indore</a>
+            </h3>
+            <p class="text-md text-gray-600 dark:text-zinc-200 text-large font-mono hover:text-yellow-300">
+              Jan 2022 - Mar 2022<br>
+              Indore, MP, India<br>
+              <ul class="list-disc p-3 space-y-4 text-lg font-mono">
+                <li class="hover:text-yellow-300">Developed advanced Gaussian Process Regression models with Rational Quadratic and Exponential kernels to forecast peak solar irradiance (solar power potential) from complex historical time-series data, achieving 83% prediction accuracy.</li>
+                <li class="hover:text-yellow-300">Led end-to-end data preparation, including cleaning, outlier handling, and feature optimization using Python (Pandas, Scikit-learn, NumPy), and validated model reliability through RMSE evaluation and 95% confidence intervals.</li>
+                <li class="hover:text-yellow-300">This work contributed to improving solar panel efficiency to maximize energy yield.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Section-3: Education -->
+    <section id="education" class="max-w-6xl mx-auto py-16 px-2">
+      <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Education</h2>
+      <div class="flex flex-col space-y-6 gap-8">
+        <!-- Seattle U -->
+        <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg px-12 py-6 flex items-center gap-4">
+          <img src="./assets/images/seattle_university_logo.jpeg" alt="Seattle University" class="w-12 h-12 rounded-lg shadow">
+          <div>
+            <h3 class="text-xl py-2 font-semibold">MSCS Data Science Specialization @
+              <a href="https://www.seattleu.edu/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Seattle University</a>
+            </h3>
+            <p class="text-md text-gray-600 dark:text-zinc-200 font-mono hover:text-yellow-300">
+              Sep 2022 - June 2024<br>
+              Seattle, WA, USA<br>
+              Awards: Dean's Graduate Student Honor Roll<br><br>
+              Coursework: Machine Learning, Artificial Intelligence, Visual Analytics, Cloud Computing, Social Media Analytics, Software Testing & Debugging, Ethics & Professional Issues in Computing 
+            </p>
+          </div>
+        </div>
+        <!-- Medi-Caps -->
+        <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg px-12 py-6 flex items-center gap-4">
+          <img src="./assets/images/Medi-Caps_University.jpeg" alt="Medi-Caps University" class="w-12 h-12 rounded-lg shadow">
+          <div>
+            <h3 class="text-xl py-2 font-semibold">B.Tech. Computer Science & Engineering @
+              <a href="https://www.medicaps.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Medi-Caps University</a>
+            </h3>
+            <p class="text-md text-gray-600 dark:text-zinc-200 font-mono hover:text-yellow-300">
+              Sep 2018 - May 2022<br>
+              Indore, MP, India<br>
+              Awards: First Division with Honours<br><br>
+              Coursework: Operating Systems, Computer Networks, Software Engineering, Compiler Design, Python Essentials, Machine Learning, Natural Language Processing, Artificial Intelligence
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Section-4: My Projects -->
+    <section id="projects" class="max-w-4xl mx-auto py-6 px-6">
+      <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">My Projects</h2>
+      <!-- Bootstrap Project carousel -->
+      <div class="bootstrap-carousel-scope">
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- ASL-Speech project -->
+            <div class="carousel-item active">
+              <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-24 w-full text-center">
+                <h3 class="text-2xl font-semibold mb-3">Real-Time ASL-to-Speech Translation-System</h3>
+                <p class="mb-4 text-gray-400 font-mono">Capstone Project: Bridging Communication Gaps with an AI-driven ASL Interpreter. Features 80% improved gesture accuracy and GPT-3.5 for seamless, context-aware speech conversion.</p>
+                <a href="https://github.com/Alfin-Abraham/Real-Time-ASL-to-Speech-Translation-System" target="_blank" class="px-4 py-2 rounded-2xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl transition-all">View on GitHub</a>
+              </div>
+            </div>
+            <!-- Stroke Risk Classification project -->
+            <div class="carousel-item">
+              <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-24 w-full text-center">
+                <h3 class="text-2xl font-semibold mb-3">Stroke-Risk-Classification</h3>
+                <p class="mb-4 text-gray-400 font-mono">From Data to Diagnostics: Optimizing Stroke Risk Assessment with Advanced ML — A Case Study in Model Selection and Rigorous Problem Solving.</p>
+                <a href="https://github.com/Alfin-Abraham/Stroke-Risk-Classification" target="_blank" class="px-4 py-2 rounded-2xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl transition-all">View on GitHub</a>
+              </div>
+            </div>
+            <!-- Stormtroopers project -->
+            <div class="carousel-item">
+              <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-24 w-full text-center">
+                <h3 class="text-2xl font-semibold mb-3">Stormtroopers-Space Explorer</h3>
+                <p class="mb-4 text-gray-400 font-mono">An interactive educational website for kids powered by C#, developed using Agile methodologies for continuous improvement and code quality over short one-week sprints.</p>
+                <a href="https://github.com/Alfin-Abraham/Stormtroopers" target="_blank" class="px-4 py-2 rounded-2xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl transition-all">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel navigation buttons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Section-5: Skills -->
+    <section id="skills" class="max-w-6xl mx-auto py-16 px-2">
+      <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Skills</h2>
+      <div class="backdrop-blur-sm flex flex-wrap font-mono gap-6">
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Python</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">HTML</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">CSS</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Tailwind CSS</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Bootstrap</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">C</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">JavaScript</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Microsoft Excel</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Tableau Desktop</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Microsoft Power BI</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Docker Desktop</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS EC2</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS S3</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS RDS</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS DynamoDB</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS Aurora</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS Lambda</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS VPC</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS SageMaker</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS QuickSight</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS Budgets</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS Cost Explorer</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">MySQL</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">PostgreSQL</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Machine Learning</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Predictive Modeling</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Statistical Data Modeling</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Prompt Engineering</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Data Analysis</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Data Visualization</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">GitHub</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Visual Studio Code</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">PyCharm</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Visual Studio</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Atom</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Critical Thinking</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Communication</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">IT Communication</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Detail-Oriented</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Problem-Solving</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Teamwork</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Adaptability</span>
+      </div>
+    </section>
+
+    
+    <!-- Section-6: Languages -->
+    <section id="languages" class="max-w-6xl mx-auto py-16 px-2">
+      <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Languages</h2>
+      <div class="flex flex-wrap font-mono text-lg gap-5">
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">English (Fluent)</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:dur text-lgation-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Hindi (Native)</span>
+        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Malayalam (Native)</span>
+      </div>
+    </section>
+
+    
+    <!-- Section-7: Contact Me -->
+    <section id="contact" class="max-w-3xl mx-auto py-10 px-6 backdrop-blur-md dark:bg-zinc-800/25 rounded-3xl shadow-lg">
+      <h2 class="text-4xl font-bold mb-6">Hit Me Up!</h2>
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" class="space-y-5">
+        <!-- Form inputs -->
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
+        <textarea name="message" rows="6" placeholder="Your message goes here!" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 text-lg"></textarea>
+        <button type="submit" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-4 py-2 rounded-3xl bg-rose-700 font-semibold text-white text-md shadow hover:shadow-xl transition-all">Fire Away!</button>
+        <span id="form-status" style="margin-left: 2em;" class="text-lg font-mono font-semibold w-fit h-fit"></span>
+      </form>
+    </section>
+  </main>
+
+  
+  
+  <footer class="mt-10 py-2 dark:bg-zinc-800/80 backdrop-blur-2xl text-center text-sm font-medium dark:text-gray-300">
+    © 2025 Alfin Abraham. All rights reserved.
+  </footer>
+
+  
+
+  <script>
+    // Mobile action-button menu toggle on small screens
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <script>
+    const canvas = document.getElementById("background");
+    const ctx = canvas.getContext("2d");
+    const totalParticles = 250;
+    const fastColor = "#F5A623"; // fast moving particles
+    let particles = [];
+
+    // Initialize canvas size and particles
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = [];
+      for (let i = 0; i < totalParticles; i++) {
+        // Randomly color and speed assignment
+        const color = Math.random() < 0.2
+          ? fastColor
+          : ["#4A90E2", "#50E3C2", "#9013FE", "#F8E71C", "#FC0303"][Math.floor(Math.random() * 5)];
+        const speed = color === fastColor ? 0.6 : 0.2;
+        const angle = Math.random() * 2 * Math.PI;
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: 2 + Math.random() * 3,
+          color,
+          speed,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+        });
+      }
+    }
+
+    // Reinitialize on window resize
+    window.addEventListener("resize", init);
+    init();
+
+    // particle animation and rendering
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.vx += (Math.random() - 0.5) * 0.02;
+        p.vy += (Math.random() - 0.5) * 0.02;
+        const vel = Math.hypot(p.vx, p.vy);
+        if (vel > p.speed) {
+          p.vx = (p.vx / vel) * p.speed;
+          p.vy = (p.vy / vel) * p.speed;
+        }
+        p.x += p.vx;
+        p.y += p.vy;
+        // Wrap around edges
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+  <!-- Message status -->
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new URLSearchParams(new FormData(form));
+
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data.toString()
+      });
+
+      if (res.ok) {
+        status.textContent = "Message sent.";
+        status.style.color = "#39F42C";
+        form.reset();
+      } else {
+        throw new Error(res.statusText);
+      }
+    } catch (err) {
+      status.textContent = "Message not sent.";
+      status.style.color = "#FF3333";
+      console.error(err);
+    }
+  });
+});
+</script>
+</body>
+</html>
