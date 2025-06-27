@@ -35,7 +35,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
     }
   </style>
   <!-- Bootstrap carousel setup -->
@@ -174,41 +173,47 @@
 <body class="dark:bg-zinc-900 dark:text-gray-100">
   <canvas id="background"></canvas>
   <!-- Navigation bar (fixed to top) -->
-  <nav class="fixed inset-x-0 top-0 dark:bg-zinc-800/80 backdrop-blur-sm shadow-lg z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-      <a href="#" class="text-3xl font-bold w-fit">Alfin Abraham</a>
-      <!-- Mobile menu toggle button -->
-      <button id="nav-toggle" class="sm:hidden flex items-center p-2 focus:outline-none" aria-label="Toggle menu">
-        <svg class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentcolor" viewbox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-      <!-- Desktop navigation links -->
-      <div id="nav-menu" class="hidden sm:flex items-center space-x-5 px-4">
-        <a href="#about" class="hover:underline font-medium">About</a>
-        <a href="#work" class="hover:underline font-medium">Work</a>
-        <a href="#education" class="hover:underline font-medium">Education</a>
-        <a href="#projects" class="hover:underline font-medium">Projects</a>
-        <a href="#skills" class="hover:underline font-medium">Skills</a>
-        <a href="#languages" class="hover:underline font-medium">Languages</a>
-        <a href="#contact" class="hover:underline font-medium">Contact</a>
-      </div>
-      <!-- Desktop action buttons -->
-      <div class="hidden sm:flex items-center space-x-4">
-        <a href="https://www.linkedin.com/in/alfin-abraham/" target="_blank" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-3 py-2 rounded-2xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl transition-all">LinkedIn</a>
-        <a href="https://github.com/alfin-abraham" target="_blank" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-3 py-2 rounded-2xl bg-zinc-600 text-white font-semibold shadow hover:shadow-xl transition-all">GitHub</a>
-        <a href="./assets/hosted-resume/Alfin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-4 py-2 rounded-2xl bg-green-600 text-white font-semibold shadow hover:shadow-xl transition-all">Résumé</a>
-      </div>
-    </div>
-    <!-- Mobile menu links -->
-    <div id="mobile-menu" class="hidden sm:hidden flex flex-col items-center space-y-4 p-8 /90 dark:bg-zinc-800/75 backdrop-blur-sm shadow-lg">
-      <a href="https://www.linkedin.com/in/alfin-abraham/" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl transition-all">LinkedIn</a>
-      <a href="https://github.com/alfin-abraham" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-zinc-600 text-white font-semibold shadow hover:shadow-xl transition-all">GitHub</a>
-      <a href="./assets/hosted-resume/Alfin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="w-full text-center px-3 py-3 rounded-3xl bg-green-600 text-white font-semibold shadow hover:shadow-xl transition-all">Résumé</a>
-    </div>
-  </nav>
+<nav class="fixed inset-x-0 top-0 dark:bg-zinc-800/80 backdrop-blur-sm shadow-lg z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+    
+    <!-- Logo -->
+    <a href="#" class="text-3xl font-bold w-fit">Alfin Abraham</a>
+    
+    <!-- Mobile menu toggle button - visible < 1024px -->
+    <button id="nav-toggle" class="flex items-center p-2 focus:outline-none lg:hidden" aria-label="Toggle menu">
+      <svg class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentcolor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
 
-  
+    <!-- Desktop navigation links - visible ≥ 1024px -->
+    <div id="nav-menu" class="hidden lg:flex items-center space-x-5 px-4">
+      <a href="#about" class="font-medium lg:hover:underline">About</a>
+      <a href="#work" class="font-medium lg:hover:underline">Work</a>
+      <a href="#education" class="font-medium lg:hover:underline">Education</a>
+      <a href="#projects" class="font-medium lg:hover:underline">Projects</a>
+      <a href="#skills" class="font-medium lg:hover:underline">Skills</a>
+      <a href="#languages" class="font-medium lg:hover:underline">Languages</a>
+      <a href="#contact" class="font-medium lg:hover:underline">Contact</a>
+    </div>
+
+    <!-- Desktop action buttons - visible ≥ 1024px -->
+    <div class="hidden lg:flex items-center space-x-4">
+      <a href="https://www.linkedin.com/in/alfin-abraham/" target="_blank" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out px-3 py-2 rounded-2xl bg-sky-600 text-white font-semibold">LinkedIn</a>
+      <a href="https://github.com/alfin-abraham" target="_blank" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out px-3 py-2 rounded-2xl bg-zinc-600 text-white font-semibold">GitHub</a>
+      <a href="./assets/hosted-resume/Alfin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out px-4 py-2 rounded-2xl bg-green-600 text-white font-semibold">Résumé</a>
+    </div>
+  </div>
+
+  <!-- Mobile menu links - visible < 1024px -->
+  <div id="mobile-menu" class="hidden flex flex-col items-center space-y-4 p-8 dark:bg-zinc-800/75 backdrop-blur-sm shadow-lg">
+    <a href="https://www.linkedin.com/in/alfin-abraham/" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl">LinkedIn</a>
+    <a href="https://github.com/alfin-abraham" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-zinc-600 text-white font-semibold shadow hover:shadow-xl">GitHub</a>
+    <a href="./assets/hosted-resume/Alfin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="w-full text-center px-3 py-3 rounded-3xl bg-green-600 text-white font-semibold shadow hover:shadow-xl">Résumé</a>
+  </div>
+</nav>
+
+
   <!-- Main content starts here -->
   <main class="space-y-2">
     <!-- Section-1: About me -->
@@ -419,7 +424,7 @@
       <h2 class="text-4xl font-bold mb-6">Hit Me Up!</h2>
       
       <form id="contact-form" name="contact-form" method="POST" data-netlify="true" class="space-y-5">
-         <input type="hidden" name="form-name" value="contact-form">
+        <input type="hidden" name="form-name" value="contact-form">
          <!-- Form inputs -->
         <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
         <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
@@ -439,10 +444,31 @@
   
 
   <script>
-    // Mobile action-button menu toggle on small screens
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Toggle menu on hamburger button click
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent immediate close from outside click
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close menu if clicking outside nav area
+  document.addEventListener('click', (e) => {
+    const isClickInsideNav = e.target.closest('nav');
+    const isMenuOpen = !mobileMenu.classList.contains('hidden');
+
+    if (!isClickInsideNav && isMenuOpen) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+
+  // Auto-close menu when clicking a link inside mobile menu
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
     });
+  });
   </script>
 
   <script>
