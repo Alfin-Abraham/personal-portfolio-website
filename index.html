@@ -417,6 +417,7 @@
     <!-- Section-7: Contact Me -->
     <section id="contact" class="max-w-3xl mx-auto py-10 px-6 backdrop-blur-md dark:bg-zinc-800/25 rounded-3xl shadow-lg">
       <h2 class="text-4xl font-bold mb-6">Hit Me Up!</h2>
+      
       <form id="contact-form" name="contact-form" method="POST" data-netlify="true" action="/" class="space-y-5">
          <input type="hidden" name="form-name" value="contact-form">
          <!-- Form inputs -->
@@ -510,38 +511,34 @@
 
   <!-- Message status -->
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
+const handleSubmit = event => {
+  event.preventDefault();
+
+  const myForm = event.target;
+  const formData = new FormData(myForm);
   const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", e => {
-    e.preventDefault();
+  formData.append("form-name", myForm.getAttribute("name"));  // Ensure form-name is included
 
-    const formData = new FormData(form);
-    // Ensure form-name is included
-    formData.append("form-name", form.getAttribute("name"));
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+    .then(() => {
+      status.textContent = "Message sent.";
+      status.style.color = "#39F42C";
+      myForm.reset();
     })
-    .then(res => {
-      if (res.ok) {
-        status.textContent = "Message sent.";
-        status.style.color = "#39F42C";
-        form.reset();
-      } else {
-        throw new Error(res.statusText);
-      }
-    })
-    .catch(err => {
+    .catch(error => {
       status.textContent = "Message not sent.";
       status.style.color = "#FF3333";
-      console.error(err);
+      console.error(error);
     });
-  });
-});
+};
+
+document.querySelector("form").addEventListener("submit", handleSubmit);
 </script>
+
 </body>
 </html>
