@@ -14,7 +14,7 @@ This repository contains the source code for my personal portfolio website. It i
 
 ---
 
-## ✨ Features
+## Features
 - **Responsive Design:** Optimized for all screen sizes, from mobile devices to desktops, using Tailwind CSS.
 - **Dynamic Background:** Subtle, animated particle background created with HTML5 Canvas and JavaScript for a visually engaging experience.
 - **Interactive UI:** Smooth scrolling, hover effects, and a project carousel for interactive user engagement.
@@ -23,7 +23,7 @@ This repository contains the source code for my personal portfolio website. It i
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 The project is built using the following technologies:
 
 **Markup and Styling:**
@@ -36,7 +36,7 @@ The project is built using the following technologies:
 
 ---
 
-## 🗂 Key Sections
+## Key Sections
 The portfolio is organized into the following sections:
 
 - **About Me:** Introduction to my background in Computer Science and my passion for data-driven solutions.
@@ -48,7 +48,7 @@ The portfolio is organized into the following sections:
 
 ---
 
-## ⚙️ Setup and Usage
+## Setup and Usage
 To run this project locally:
 
 ```bash
@@ -60,14 +60,14 @@ Open the `index.html` file in your web browser. No special servers or build step
 
 ---
 
-## 📬 Contact Form Integration
+## Contact Form Integration
 The "Hit Me Up!" contact form is configured for deployment on Netlify:
 - Utilizes the `data-netlify="true"` attribute to enable form handling by Netlify.
 - A custom JavaScript handler provides real-time feedback on the page, displaying "Message sent" or "Message not sent" without redirecting to a separate confirmation page.
 
 ---
 
-## © License and Copyright
+## License and Copyright
 The content and design of this website are the intellectual property of **Alfin Abraham**. A copyright notice is included in the footer:
 
 ```text
