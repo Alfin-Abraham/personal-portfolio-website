@@ -417,9 +417,9 @@
     <!-- Section-7: Contact Me -->
     <section id="contact" class="max-w-3xl mx-auto py-10 px-6 backdrop-blur-md dark:bg-zinc-800/25 rounded-3xl shadow-lg">
       <h2 class="text-4xl font-bold mb-6">Hit Me Up!</h2>
-      <form id="contact-form" name="contact" method="POST" data-netlify="true" class="space-y-5">
-        <!-- Form inputs -->
-         <input type="hidden" name="form-name" value="contact" />
+      <form id="contact-form" name="contact-form" method="POST" data-netlify="true" action="/" class="space-y-5">
+         <input type="hidden" name="form-name" value="contact-form">
+         <!-- Form inputs -->
         <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
         <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
         <textarea name="message" rows="6" placeholder="Your message goes here!" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 text-lg"></textarea>
@@ -509,22 +509,24 @@
   </script>
 
   <!-- Message status -->
-   <script>
+  <script>
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", e => {
     e.preventDefault();
-    const data = new URLSearchParams(new FormData(form));
 
-    try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: data.toString()
-      });
+    const formData = new FormData(form);
+    // Ensure form-name is included
+    formData.append("form-name", form.getAttribute("name"));
 
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(res => {
       if (res.ok) {
         status.textContent = "Message sent.";
         status.style.color = "#39F42C";
@@ -532,11 +534,12 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         throw new Error(res.statusText);
       }
-    } catch (err) {
+    })
+    .catch(err => {
       status.textContent = "Message not sent.";
       status.style.color = "#FF3333";
       console.error(err);
-    }
+    });
   });
 });
 </script>
