@@ -418,19 +418,16 @@
     <section id="contact" class="max-w-3xl mx-auto py-10 px-6 backdrop-blur-md dark:bg-zinc-800/25 rounded-3xl shadow-lg">
       <h2 class="text-4xl font-bold mb-6">Hit Me Up!</h2>
       
-      <!-- dummy hidden form -->
-      <form name="contact-form" netlify hidden>
-        <input type="hidden" name="form-name" value="contact-form">
-      </form>
-      
-      <form id="contact-form" name="contact-form" method="POST" data-netlify="true" action="/" class="space-y-5">
+      <form id="contact-form" name="contact-form" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="space-y-5">
          <input type="hidden" name="form-name" value="contact-form">
          <!-- Form inputs -->
         <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
         <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
         <textarea name="message" rows="6" placeholder="Your message goes here!" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 text-lg"></textarea>
+        <!-- recaptch -->
+        <div data-netlify-recaptcha="true"></div
+
         <button type="submit" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-4 py-2 rounded-3xl bg-rose-700 font-semibold text-white text-md shadow hover:shadow-xl transition-all">Fire Away!</button>
-        <span id="form-status" style="margin-left: 2em;" class="text-lg font-mono font-semibold w-fit h-fit"></span>
       </form>
     </section>
   </main>
@@ -513,37 +510,5 @@
     }
     animate();
   </script>
-
-  <!-- Message status -->
-  <script>
-const handleSubmit = event => {
-  event.preventDefault();
-
-  const myForm = event.target;
-  const formData = new FormData(myForm);
-  const status = document.getElementById("form-status");
-
-  formData.append("form-name", myForm.getAttribute("name"));  // Ensure form-name is included
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString()
-  })
-    .then(() => {
-      status.textContent = "Message sent.";
-      status.style.color = "#39F42C";
-      myForm.reset();
-    })
-    .catch(error => {
-      status.textContent = "Message not sent.";
-      status.style.color = "#FF3333";
-      console.error(error);
-    });
-};
-
-document.querySelector("form").addEventListener("submit", handleSubmit);
-</script>
-
 </body>
 </html>
