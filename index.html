@@ -20,6 +20,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    @media (hover: hover) {
+      .no-active-desktop:active {
+        color: inherit !important;
+      }}
+  </style>
+  <style>
     html {
     scroll-behavior: smooth;
     height: 100%;
@@ -249,7 +255,7 @@
 
     
     <!-- Section-2: Work Experience -->
-    <section id="work" class="max-w-6xl mx-auto pt-24 py-2 px-2">
+    <section id="work" class="max-w-6xl mx-auto pt-16 md:pt-24 py-1 md:py-2 px-2 text-[0.95rem]">
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Work Experience</h2>
       <div class="flex flex-col space-y-6 gap-8">
         <!-- CDF -->
@@ -257,12 +263,12 @@
           <img src="./assets/images/CDF.jpeg" alt="Community Dreams Foundation" class="w-12 h-12 rounded-lg shadow">
           <div>
             <h3 class="text-2xl py-2 font-semibold">Data Analyst @
-              <a href="https://www.cdreams.org/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Community Dreams Foundation</a>
+              <a href="https://www.cdreams.org/" target="_blank" rel="noopener noreferrer" class="underline hover:underline hover:text-sky-500 hover:italic">Community Dreams Foundation</a>
             </h3>
             <p class="text-md text-gray-600 dark:text-zinc-200 text-large font-mono hover:text-yellow-300">
               Sep 2024 - Present<br>
               Wethersﬁeld, CT, USA (Remote)<br>
-              <ul class="list-disc p-3 space-y-4 text-lg font-mono">
+              <ul class="list-disc p-3 space-y-4 text-[1rem] font-mono">
                 <li class="hover:text-yellow-300">Designed and implemented a scalable synthetic data pipeline to train CDF's in-house, ML-powered resume analyzer, enhancing data quality across 35+ job profiles with a focus on industry trends, role relevance, and privacy compliance.</li>
                 <li class="hover:text-yellow-300">Leveraged LLMs (ChatGPT-4o, Claude 3.5 Sonnet) with custom prompt engineering to generate realistic, role-specific resumes, enabling high-accuracy model performance (96.2%) and ultimately improving HR workflows.</li>
               </ul>
@@ -274,12 +280,12 @@
           <img src="./assets/images/IIT-I.jpeg" alt="Indian Institute of Technology Indore" class="w-12 h-12 rounded-lg shadow">
           <div>
             <h3 class="text-2xl py-2 font-semibold">Machine Learning Researcher @
-              <a href="https://www.iiti.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Indian Institute of Technology Indore</a>
+              <a href="https://www.iiti.ac.in/" target="_blank" rel="noopener noreferrer" class="underline hover:underline hover:text-sky-500 hover:italic">Indian Institute of Technology Indore</a>
             </h3>
             <p class="text-md text-gray-600 dark:text-zinc-200 text-large font-mono hover:text-yellow-300">
               Jan 2022 - Mar 2022<br>
               Indore, MP, India<br>
-              <ul class="list-disc p-3 space-y-4 text-lg font-mono">
+              <ul class="list-disc p-3 space-y-4 text-[1rem] font-mono">
                 <li class="hover:text-yellow-300">Developed advanced Gaussian Process Regression models with Rational Quadratic and Exponential kernels to forecast peak solar irradiance (solar power potential) from complex historical time-series data, achieving 83% prediction accuracy.</li>
                 <li class="hover:text-yellow-300">Led end-to-end data preparation, including cleaning, outlier handling, and feature optimization using Python (Pandas, Scikit-learn, NumPy), and validated model reliability through RMSE evaluation and 95% confidence intervals.</li>
                 <li class="hover:text-yellow-300">This work contributed to improving solar panel efficiency to maximize energy yield.</li>
@@ -292,7 +298,7 @@
 
     
     <!-- Section-3: Education -->
-    <section id="education" class="max-w-6xl mx-auto pt-24 py-2 px-2">
+    <section id="education" class="max-w-6xl mx-auto pt-16 md:pt-24 py-1 md:py-2 px-2 text-[0.95rem]">
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Education</h2>
       <div class="flex flex-col space-y-6 gap-8">
         <!-- Seattle U -->
@@ -300,7 +306,7 @@
           <img src="./assets/images/seattle_university_logo.jpeg" alt="Seattle University" class="w-12 h-12 rounded-lg shadow">
           <div>
             <h3 class="text-xl py-2 font-semibold">MSCS Data Science Specialization @
-              <a href="https://www.seattleu.edu/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Seattle University</a>
+              <a href="https://www.seattleu.edu/" target="_blank" rel="noopener noreferrer" class="underline hover:underline hover:text-sky-500 hover:italic">Seattle University</a>
             </h3>
             <p class="text-md text-gray-600 dark:text-zinc-200 font-mono hover:text-yellow-300">
               Sep 2022 - June 2024<br>
@@ -315,7 +321,7 @@
           <img src="./assets/images/Medi-Caps_University.jpeg" alt="Medi-Caps University" class="w-12 h-12 rounded-lg shadow">
           <div>
             <h3 class="text-xl py-2 font-semibold">B.Tech. Computer Science & Engineering @
-              <a href="https://www.medicaps.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-sky-500 hover:italic">Medi-Caps University</a>
+              <a href="https://www.medicaps.ac.in/" target="_blank" rel="noopener noreferrer" class="underline hover:underline hover:text-sky-500 hover:italic">Medi-Caps University</a>
             </h3>
             <p class="text-md text-gray-600 dark:text-zinc-200 font-mono hover:text-yellow-300">
               Sep 2018 - May 2022<br>
@@ -378,36 +384,36 @@
     <!-- Section-5: Skills -->
     <section id="skills" class="max-w-6xl mx-auto pt-24 py-2 px-2">
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Skills</h2>
-      <div class="backdrop-blur-sm flex flex-wrap font-mono gap-6">
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Python</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">HTML</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">CSS</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Tailwind CSS</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Bootstrap</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">C</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Microsoft Excel</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Tableau Desktop</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Microsoft Power BI</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Docker Desktop</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS EC2</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS S3</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS RDS</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS DynamoDB</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS Aurora</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS Lambda</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS SageMaker</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">AWS QuickSight</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">MySQL</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">PostgreSQL</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Machine Learning</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Statistical Data Modeling</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Prompt Engineering</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Data Visualization</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">GitHub</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Visual Studio Code</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">PyCharm</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Visual Studio</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl text-lg">Atom</span>
+      <div class="backdrop-blur-sm flex flex-wrap font-mono gap-4 md:gap-6 text-base md:text-lg">
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Python</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">HTML</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">CSS</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Tailwind CSS</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Bootstrap</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">C</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Microsoft Excel</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Tableau Desktop</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Microsoft Power BI</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Docker Desktop</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS EC2</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS S3</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS RDS</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS DynamoDB</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS Aurora</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS Lambda</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS SageMaker</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS QuickSight</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">MySQL</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">PostgreSQL</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Machine Learning</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Statistical Data Modeling</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Prompt Engineering</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Data Visualization</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">GitHub</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Visual Studio Code</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">PyCharm</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Visual Studio</span>
+        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Atom</span>
       </div>
     </section>
 
@@ -416,16 +422,16 @@
     <section id="languages" class="max-w-6xl mx-auto pt-24 py-2 px-2">
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Languages</h2>
       <div class="flex flex-wrap font-mono text-lg gap-5">
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">English (Fluent)</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:dur text-lgation-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Hindi (Native)</span>
-        <span class="transform-gpu hover:scale-110 transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Malayalam (Native)</span>
+        <span class="transform-gpu transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">English (Fluent)</span>
+        <span class="transform-gpu transition duration-200 ease-in-out motion-safe:dur text-lgation-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Hindi (Native)</span>
+        <span class="transform-gpu transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Malayalam (Native)</span>
       </div>
     </section>
 
     
     <!-- Section-7: Contact Me -->
     <section id="contact" class="max-w-3xl mx-auto py-10 px-6 backdrop-blur-md dark:bg-zinc-600/25 rounded-3xl shadow-lg">
-      <h2 class="text-4xl font-bold mb-6">Hit Me Up!</h2>
+      <h2 class="text-4xl font-bold">Hit Me Up!</h2>
       
       <form id="contact-form" name="contact-form" method="POST" data-netlify="true" class="space-y-5">
         <input type="hidden" name="form-name" value="contact-form">
