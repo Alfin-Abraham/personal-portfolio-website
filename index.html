@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-py-12">
+<html lang="en">
 <head>
   <!-- Metadata -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Alfin Abraham</title>
   <!-- icons -->
   <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/favicon_io/android-chrome-192x192.png">
@@ -27,6 +27,20 @@
     /* Space reserved at the top for fixed nav */
     body {
       padding-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+    background-color: #060606;
+    }
+    main {
+      flex: 1;
     }
     /* Fullscreen background canvas styling */
     #background {
@@ -170,10 +184,10 @@
 </head>
 
 
-<body class="dark:bg-zinc-900 dark:text-gray-100">
+<body class="dark:text-gray-100">
   <canvas id="background"></canvas>
   <!-- Navigation bar (fixed to top) -->
-<nav class="fixed inset-x-0 top-0 dark:bg-zinc-800/80 backdrop-blur-sm shadow-lg z-50">
+<nav class="fixed inset-x-0 top-0 dark:bg-zinc-900/75 backdrop-blur-sm shadow-lg z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
     
     <!-- Logo -->
@@ -206,7 +220,7 @@
   </div>
 
   <!-- Mobile menu links - visible < 1024px -->
-  <div id="mobile-menu" class="hidden flex flex-col items-center space-y-4 p-8 dark:bg-zinc-800/75 backdrop-blur-sm shadow-lg">
+  <div id="mobile-menu" class="hidden flex flex-col items-center space-y-4 p-8 dark:bg-zinc-900/75 backdrop-blur-sm shadow-lg">
     <a href="https://www.linkedin.com/in/alfin-abraham/" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-sky-600 text-white font-semibold shadow hover:shadow-xl">LinkedIn</a>
     <a href="https://github.com/alfin-abraham" target="_blank" class="w-full text-center px-3 py-3 rounded-3xl bg-zinc-600 text-white font-semibold shadow hover:shadow-xl">GitHub</a>
     <a href="./assets/hosted-resume/Alfin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="w-full text-center px-3 py-3 rounded-3xl bg-green-600 text-white font-semibold shadow hover:shadow-xl">Résumé</a>
@@ -215,9 +229,9 @@
 
 
   <!-- Main content starts here -->
-  <main class="space-y-2">
+  <main class="space-y-16 pb-10">
     <!-- Section-1: About me -->
-    <section id="about" class="max-w-6xl mx-auto py-16 px-2">
+    <section id="about" class="max-w-6xl mx-auto pt-24 py-2 px-2">
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">About Me</h2>
       <div class="flex flex-col md:flex-row items-center gap-8">
         <div class="dark:bg-zinc-800/70 backdrop-blur-md border dark:border-gray-700 rounded-full shadow-lg p-4 flex-shrink-0 aspect-square w-40 md:w-48 lg:w-56">
@@ -437,44 +451,60 @@
 
   
   
-  <footer class="mt-10 py-2 dark:bg-zinc-800/80 backdrop-blur-2xl text-center text-sm font-medium dark:text-gray-300">
+  <footer class="mt-auto py-2 dark:bg-zinc-900/75 backdrop-blur-2xl text-center text-sm font-medium dark:text-gray-300 w-full">
     © 2025 Alfin Abraham. All rights reserved.
   </footer>
 
   
 
   <script>
-  const navToggle = document.getElementById('nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  // Toggle menu on hamburger button click
-  navToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent immediate close from outside click
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Close menu if clicking outside nav area
-  document.addEventListener('click', (e) => {
-    const isClickInsideNav = e.target.closest('nav');
-    const isMenuOpen = !mobileMenu.classList.contains('hidden');
-
-    if (!isClickInsideNav && isMenuOpen) {
-      mobileMenu.classList.add('hidden');
-    }
-  });
-
-  // Auto-close menu when clicking a link inside mobile menu
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
+    let scrollPosition = 0;
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    // Toggle mobile menu with body lock
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      const menuOpen = !mobileMenu.classList.contains('hidden');
+      if (menuOpen) {
+        scrollPosition = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = '100%';
+      }
+      else {
+        unlockBodyScroll();
+      }
     });
-  });
+    // Click outside closes menu
+    document.addEventListener('click', (e) => {
+      const isClickInsideNav = e.target.closest('nav');
+      const isMenuOpen = !mobileMenu.classList.contains('hidden');
+      if (!isClickInsideNav && isMenuOpen) {
+        mobileMenu.classList.add('hidden');
+        unlockBodyScroll();
+      }
+    });
+    // Auto-close menu and unlock scroll after link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        unlockBodyScroll();
+      });
+    });
+    // Helper function to unlock scroll
+    function unlockBodyScroll() {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollPosition);
+    }
   </script>
 
   <script>
     const canvas = document.getElementById("background");
     const ctx = canvas.getContext("2d");
-    const totalParticles = 250;
+    const totalParticles = 260;
     const fastColor = "#F5A623"; // fast moving particles
     let particles = [];
 
@@ -482,6 +512,7 @@
     function init() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      document.body.style.backgroundColor = '#060606';
       particles = [];
       for (let i = 0; i < totalParticles; i++) {
         // Randomly color and speed assignment
@@ -501,6 +532,8 @@
         });
       }
     }
+    // Redraw canvas after device rotation
+    window.addEventListener('orientationchange', init);
 
     // Reinitialize on window resize
     window.addEventListener("resize", init);
