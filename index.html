@@ -21,35 +21,39 @@
 
   <style>
     @media (hover: hover) {
-      .no-active-desktop:active {
-        color: inherit !important;
-      }}
+    .skill-item:hover {
+      color: #22C55E;}
+    }
   </style>
   <style>
     html {
-    scroll-behavior: smooth;
+      scroll-behavior: smooth;
+    }
+    /* Space reserved at the top for fixed nav */
+    body {
+      padding-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+    html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     overscroll-behavior: none;
     background-color: #060606;
     }
-    body {
-    padding-top: 4rem; /* Space for fixed navbar */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    position: relative;
-    height: 100%;
-    margin: 0;
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    overscroll-behavior: none;
-    background-color: #060606;
-    }
     main {
-    flex: 1;
+      flex: 1;
+    }
+    /* Fullscreen background canvas styling */
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
     /* Fullscreen background canvas styling */
     #background {
@@ -200,7 +204,7 @@
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
     
     <!-- Logo -->
-    <a href="#" class="text-3xl font-bold w-fit text-rose-600">Alfin Abraham</a>
+    <a href="#" class="text-3xl font-bold w-fit text-rose-500">Alfin Abraham</a>
     
     <!-- Mobile menu toggle button - visible < 1024px -->
     <button id="nav-toggle" class="flex items-center p-2 focus:outline-none lg:hidden" aria-label="Toggle menu">
@@ -241,17 +245,21 @@
   <main class="space-y-16 pb-10">
     <!-- Section-1: About me -->
     <section id="about" class="max-w-6xl mx-auto pt-24 py-2 px-2">
-      <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">About Me</h2>
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="dark:bg-zinc-800/70 backdrop-blur-md border dark:border-gray-700 rounded-full shadow-lg p-4 flex-shrink-0 aspect-square w-40 md:w-48 lg:w-56">
-          <img src="./assets/images/Alfin.jpeg" alt="Alfin-Headshot" class="w-full h-full rounded-full object-cover">
-        </div>
-        <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg font-medium text-base font-mono px-12 py-6">
-          <p class="hover:text-yellow-300">I am a Computer Science graduate with a specialization in Data Science, skilled in machine learning, AI, and cloud technologies.</p>
-            <p class="hover:text-yellow-300">I'm passionate about building data-driven, impactful solutions that solve real-world challenges.</p>
-        </div>
-      </div>
-    </section>
+  <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">About Me</h2>
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    
+    <div class="dark:bg-zinc-800/70 backdrop-blur-md border dark:border-gray-700 rounded-full shadow-lg p-4 flex-shrink-0 w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56">
+      <img src="./assets/images/Alfin.jpeg" alt="Alfin-Headshot" class="w-full h-full rounded-full object-cover">
+    </div>
+    
+    <div class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg font-medium text-base font-mono px-6 md:px-12 py-6">
+      <p class="hover:text-yellow-300">I am a Computer Science graduate with a specialization in Data Science, skilled in machine learning, AI, and cloud technologies.</p>
+      <p class="hover:text-yellow-300">I'm passionate about building data-driven, impactful solutions that solve real-world challenges.</p>
+    </div>
+
+  </div>
+</section>
+
 
     
     <!-- Section-2: Work Experience -->
@@ -385,35 +393,35 @@
     <section id="skills" class="max-w-6xl mx-auto pt-24 py-2 px-2">
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Skills</h2>
       <div class="backdrop-blur-sm flex flex-wrap font-mono gap-4 md:gap-6 text-base md:text-lg">
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Python</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">HTML</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">CSS</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Tailwind CSS</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Bootstrap</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">C</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Microsoft Excel</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Tableau Desktop</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Microsoft Power BI</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Docker Desktop</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS EC2</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS S3</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS RDS</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS DynamoDB</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS Aurora</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS Lambda</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS SageMaker</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">AWS QuickSight</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">MySQL</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">PostgreSQL</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Machine Learning</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Statistical Data Modeling</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Prompt Engineering</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Data Visualization</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">GitHub</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Visual Studio Code</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">PyCharm</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Visual Studio</span>
-        <span class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg hover:text-green-400 active:text-green-400 no-active-desktop">Atom</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Python</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">HTML</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">CSS</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Tailwind CSS</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Bootstrap</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">C</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Microsoft Excel</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Tableau Desktop</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Microsoft Power BI</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Docker Desktop</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS EC2</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS S3</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS RDS</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS DynamoDB</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS Aurora</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS Lambda</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS SageMaker</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS QuickSight</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">MySQL</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">PostgreSQL</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Machine Learning</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Statistical Data Modeling</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Prompt Engineering</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Data Visualization</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">GitHub</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Visual Studio Code</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">PyCharm</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Visual Studio</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Atom</span>
       </div>
     </section>
 
@@ -421,26 +429,23 @@
     <!-- Section-6: Languages -->
     <section id="languages" class="max-w-6xl mx-auto pt-24 py-2 px-2">
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Languages</h2>
-      <div class="flex flex-wrap font-mono text-lg gap-5">
-        <span class="transform-gpu transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">English (Fluent)</span>
-        <span class="transform-gpu transition duration-200 ease-in-out motion-safe:dur text-lgation-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Hindi (Native)</span>
-        <span class="transform-gpu transition duration-200 ease-in-out motion-safe:duration-200 hover:text-green-400 dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-2xl shadow-lg hover:shadow-2xl">Malayalam (Native)</span>
+      <div class="backdrop-blur-sm flex flex-wrap font-mono gap-4 md:gap-6 text-base md:text-lg">
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">English (Fluent)</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Hindi (Native)</span>
+        <span class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Malayalam (Native)</span>
       </div>
     </section>
 
     
     <!-- Section-7: Contact Me -->
-    <section id="contact" class="max-w-3xl mx-auto py-10 px-6 backdrop-blur-md dark:bg-zinc-600/25 rounded-3xl shadow-lg">
+    <section id="contact" class="max-w-3xl mx-auto pt-8 md:pt-10 pb-8 md:pb-10 px-4 md:px-6 backdrop-blur-md dark:bg-zinc-600/25 rounded-3xl shadow-lg">
       <h2 class="text-4xl font-bold">Hit Me Up!</h2>
-      
-      <form id="contact-form" name="contact-form" method="POST" data-netlify="true" class="space-y-5">
+      <form id="contact-form" name="contact-form" method="POST" data-netlify="true" class="space-y-4 md:space-y-5">
         <input type="hidden" name="form-name" value="contact-form">
-         <!-- Form inputs -->
-        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
-        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 font-medium">
-        <textarea name="message" rows="6" placeholder="Your message goes here!" required class="w-full p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 text-lg"></textarea>
-
-        <button type="submit" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-4 py-2 rounded-3xl bg-rose-700 font-semibold text-white text-md shadow hover:shadow-xl transition-all">Fire Away!</button>
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-2.5 md:p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 text-base md:text-lg font-medium">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-2.5 md:p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 text-base md:text-lg font-medium">
+        <textarea name="message" rows="5" placeholder="Your message goes here!" required class="w-full p-2.5 md:p-3 rounded-xl shadow hover:shadow-xl transition-all dark:bg-zinc-950/75 text-base md:text-lg"></textarea>
+        <button type="submit" class="transform-gpu hover:scale-110 shadow-lg hover:shadow-2xl transition duration-200 ease-in-out motion-safe:duration-200 px-3 md:px-4 py-2 rounded-3xl bg-rose-700 font-semibold text-white text-sm md:text-md shadow hover:shadow-xl transition-all">Fire Away!</button>
       </form>
     </section>
   </main>
