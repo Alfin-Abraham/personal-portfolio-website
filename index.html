@@ -4,9 +4,8 @@
 <head>
   <!-- Metadata -->
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#060606" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#060606">
@@ -20,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_io/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon-32x32.png">
   <link rel="manifest" href="./assets/images/favicon_io/site.webmanifest">
-  <!-- tailwind import and media queries -->
+  <!-- tailwind import -->
   <script>
     document.documentElement.classList.add('dark');
   </script>
@@ -33,12 +32,8 @@
 
   <style>
     @media (hover: hover) {
-      .hover-text-green:hover {
+      .skill-item:hover {
         color: #22C55E;
-      }
-
-      .hover-text-yellow:hover {
-        color: #FCD34D !important;
       }
     }
   </style>
@@ -87,178 +82,178 @@
 
   <!-- Bootstrap carousel setup -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    .bootstrap-carousel-scope .carousel {
-      position: relative;
-    }
+<style>
+  .bootstrap-carousel-scope .carousel {
+    position: relative;
+  }
 
-    .bootstrap-carousel-scope .carousel-inner {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
+  .bootstrap-carousel-scope .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
 
-    .bootstrap-carousel-scope .carousel-item {
-      position: relative;
-      display: none;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      width: 100%;
-      transition: transform .6s ease;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-perspective: 1000px;
-      perspective: 1000px;
-    }
+  .bootstrap-carousel-scope .carousel-item {
+    position: relative;
+    display: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    transition: transform .6s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
 
-    .bootstrap-carousel-scope .carousel-item.active,
-    .bootstrap-carousel-scope .carousel-item-next,
-    .bootstrap-carousel-scope .carousel-item-prev {
-      display: block;
-    }
+  .bootstrap-carousel-scope .carousel-item.active,
+  .bootstrap-carousel-scope .carousel-item-next,
+  .bootstrap-carousel-scope .carousel-item-prev {
+    display: block;
+  }
 
-    .bootstrap-carousel-scope .carousel-item-next,
-    .bootstrap-carousel-scope .carousel-item-prev {
-      position: absolute;
-      top: 0;
-    }
+  .bootstrap-carousel-scope .carousel-item-next,
+  .bootstrap-carousel-scope .carousel-item-prev {
+    position: absolute;
+    top: 0;
+  }
+
+  .bootstrap-carousel-scope .carousel-item-next.carousel-item-left,
+  .bootstrap-carousel-scope .carousel-item-prev.carousel-item-right {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
 
     .bootstrap-carousel-scope .carousel-item-next.carousel-item-left,
     .bootstrap-carousel-scope .carousel-item-prev.carousel-item-right {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
     }
+  }
 
-    @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+  .bootstrap-carousel-scope .carousel-item-next,
+  .bootstrap-carousel-scope .active.carousel-item-right {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
 
-      .bootstrap-carousel-scope .carousel-item-next.carousel-item-left,
-      .bootstrap-carousel-scope .carousel-item-prev.carousel-item-right {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-      }
-    }
+  @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
 
     .bootstrap-carousel-scope .carousel-item-next,
     .bootstrap-carousel-scope .active.carousel-item-right {
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%);
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
     }
+  }
 
-    @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+  .bootstrap-carousel-scope .carousel-item-prev,
+  .bootstrap-carousel-scope .active.carousel-item-left {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
 
-      .bootstrap-carousel-scope .carousel-item-next,
-      .bootstrap-carousel-scope .active.carousel-item-right {
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-      }
-    }
+  @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
 
     .bootstrap-carousel-scope .carousel-item-prev,
     .bootstrap-carousel-scope .active.carousel-item-left {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
     }
+  }
 
-    @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+  .bootstrap-carousel-scope .carousel-control-prev,
+  .bootstrap-carousel-scope .carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .7;
+  }
 
-      .bootstrap-carousel-scope .carousel-item-prev,
-      .bootstrap-carousel-scope .active.carousel-item-left {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-      }
-    }
+  .bootstrap-carousel-scope .carousel-control-prev:hover,
+  .bootstrap-carousel-scope .carousel-control-prev:focus,
+  .bootstrap-carousel-scope .carousel-control-next:hover,
+  .bootstrap-carousel-scope .carousel-control-next:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: .9;
+  }
 
-    .bootstrap-carousel-scope .carousel-control-prev,
-    .bootstrap-carousel-scope .carousel-control-next {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
+  .bootstrap-carousel-scope .carousel-control-prev {
+    left: 0;
+  }
+
+  .bootstrap-carousel-scope .carousel-control-next {
+    right: 0;
+  }
+
+  .bootstrap-carousel-scope .carousel-control-prev-icon,
+  .bootstrap-carousel-scope .carousel-control-next-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .bootstrap-carousel-scope .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  }
+
+  .bootstrap-carousel-scope .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  }
+
+  .bootstrap-carousel-scope .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  /* Responsive Height Adjustments */
+  @media screen and (max-width: 480px) and (orientation: portrait) {
+    .bootstrap-carousel-scope .carousel-item > div {
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      width: 15%;
-      color: #FFFFFF;
-      text-align: center;
-      opacity: .7;
+      flex-direction: column;
+      justify-content: space-evenly;
+      min-height: 730px;
+      max-height: 730px;
+      overflow: hidden;
     }
+  }
 
-    .bootstrap-carousel-scope .carousel-control-prev:hover,
-    .bootstrap-carousel-scope .carousel-control-prev:focus,
-    .bootstrap-carousel-scope .carousel-control-next:hover,
-    .bootstrap-carousel-scope .carousel-control-next:focus {
-      color: #FFFFFF;
-      text-decoration: none;
-      outline: 0;
-      opacity: .9;
+  @media screen and (min-width: 481px) and (max-width: 820px) and (orientation: portrait) {
+    .bootstrap-carousel-scope .carousel-item > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 400px;
+      max-height: 400px;
+      overflow: hidden;
     }
-
-    .bootstrap-carousel-scope .carousel-control-prev {
-      left: 0;
-    }
-
-    .bootstrap-carousel-scope .carousel-control-next {
-      right: 0;
-    }
-
-    .bootstrap-carousel-scope .carousel-control-prev-icon,
-    .bootstrap-carousel-scope .carousel-control-next-icon {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background: transparent no-repeat center center;
-      background-size: 100% 100%;
-    }
-
-    .bootstrap-carousel-scope .carousel-control-prev-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-    }
-
-    .bootstrap-carousel-scope .carousel-control-next-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-    }
-
-    .bootstrap-carousel-scope .visually-hidden {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
-
-    /* Device responsive height adjustments for carousel */
-    @media screen and (max-width: 480px) and (orientation: portrait) {
-      .bootstrap-carousel-scope .carousel-item>div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        min-height: 730px;
-        max-height: 730px;
-        overflow: hidden;
-      }
-    }
-
-    @media screen and (min-width: 481px) and (max-width: 820px) and (orientation: portrait) {
-      .bootstrap-carousel-scope .carousel-item>div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 400px;
-        max-height: 400px;
-        overflow: hidden;
-      }
-    }
-  </style>
+  }
+</style>
 
 </head>
 
@@ -312,7 +307,7 @@
     </div>
   </nav>
 
-  <!-- My resume starts below this -->
+  <!-- Main content starts here -->
   <main class="space-y-16 pb-10">
     <!-- Section-1: About me -->
     <section id="about" class="max-w-6xl mx-auto pt-24 py-2 px-2">
@@ -326,9 +321,9 @@
 
         <div
           class="dark:bg-zinc-800/75 backdrop-blur-md border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg font-medium text-base font-mono px-6 md:px-12 py-6">
-          <p class="hover-text-yellow">I am a Computer Science graduate with a specialization in Data Science,
+          <p class="hover:text-yellow-300">I am a Computer Science graduate with a specialization in Data Science,
             skilled in machine learning, AI, and cloud technologies.</p>
-          <p class="hover-text-yellow">I'm passionate about building data-driven, impactful solutions that solve
+          <p class="hover:text-yellow-300">I'm passionate about building data-driven, impactful solutions that solve
             real-world challenges.</p>
         </div>
 
@@ -348,14 +343,14 @@
               <a href="https://www.cdreams.org/" target="_blank" rel="noopener noreferrer"
                 class="underline hover:underline hover:text-sky-500 hover:italic">Community Dreams Foundation</a>
             </h3>
-            <p class="hover-text-yellow text-md text-gray-600 dark:text-zinc-200 text-large font-mono">
+            <p class="text-md text-gray-600 dark:text-zinc-200 text-large font-mono hover:text-yellow-300">
               Sep 2024 - Present<br>
               Wethersﬁeld, CT, USA (Remote)<br>
               <ul class="list-disc p-3 space-y-4 text-[1rem] font-mono">
-                <li class="hover-text-yellow">Designed and implemented a scalable synthetic data pipeline to train
+                <li class="hover:text-yellow-300">Designed and implemented a scalable synthetic data pipeline to train
                   CDF's in-house, ML-powered resume analyzer, enhancing data quality across 35+ job profiles with a
                   focus on industry trends, role relevance, and privacy compliance.</li>
-                <li class="hover-text-yellow">Leveraged LLMs (ChatGPT-4o, Claude 3.5 Sonnet) with custom prompt
+                <li class="hover:text-yellow-300">Leveraged LLMs (ChatGPT-4o, Claude 3.5 Sonnet) with custom prompt
                   engineering to generate realistic, role-specific resumes, enabling high-accuracy model performance
                   (96.2%) and ultimately improving HR workflows.</li>
               </ul>
@@ -373,17 +368,17 @@
                 class="underline hover:underline hover:text-sky-500 hover:italic">Indian Institute of Technology
                 Indore</a>
             </h3>
-            <p class="hover-text-yellow text-md text-gray-600 dark:text-zinc-200 text-large font-mono">
+            <p class="text-md text-gray-600 dark:text-zinc-200 text-large font-mono hover:text-yellow-300">
               Jan 2022 - Mar 2022<br>
               Indore, MP, India<br>
               <ul class="list-disc p-3 space-y-4 text-[1rem] font-mono">
-                <li class="hover-text-yellow">Developed advanced Gaussian Process Regression models with Rational
+                <li class="hover:text-yellow-300">Developed advanced Gaussian Process Regression models with Rational
                   Quadratic and Exponential kernels to forecast peak solar irradiance (solar power potential) from
                   complex historical time-series data, achieving 83% prediction accuracy.</li>
-                <li class="hover-text-yellow">Led end-to-end data preparation, including cleaning, outlier handling,
+                <li class="hover:text-yellow-300">Led end-to-end data preparation, including cleaning, outlier handling,
                   and feature optimization using Python (Pandas, Scikit-learn, NumPy), and validated model reliability
                   through RMSE evaluation and 95% confidence intervals.</li>
-                <li class="hover-text-yellow">This work contributed to improving solar panel efficiency to maximize
+                <li class="hover:text-yellow-300">This work contributed to improving solar panel efficiency to maximize
                   energy yield.</li>
               </ul>
             </p>
@@ -406,7 +401,7 @@
               <a href="https://www.seattleu.edu/" target="_blank" rel="noopener noreferrer"
                 class="underline hover:underline hover:text-sky-500 hover:italic">Seattle University</a>
             </h3>
-            <p class="hover-text-yellow text-md text-gray-600 dark:text-zinc-200 font-mono">
+            <p class="text-md text-gray-600 dark:text-zinc-200 font-mono hover:text-yellow-300">
               Sep 2022 - June 2024<br>
               Seattle, WA, USA<br>
               Awards: Dean's Graduate Student Honor Roll<br><br>
@@ -425,7 +420,7 @@
               <a href="https://www.medicaps.ac.in/" target="_blank" rel="noopener noreferrer"
                 class="underline hover:underline hover:text-sky-500 hover:italic">Medi-Caps University</a>
             </h3>
-            <p class="hover-text-yellow text-md text-gray-600 dark:text-zinc-200 font-mono">
+            <p class="text-md text-gray-600 dark:text-zinc-200 font-mono hover:text-yellow-300">
               Sep 2018 - May 2022<br>
               Indore, MP, India<br>
               Awards: First Division with Honours<br><br>
@@ -501,82 +496,82 @@
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Skills</h2>
       <div class="backdrop-blur-sm flex flex-wrap font-mono gap-4 md:gap-6 text-base md:text-lg">
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Python</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Python</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">HTML</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">HTML</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">CSS</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">CSS</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Tailwind
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Tailwind
           CSS</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Bootstrap</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Bootstrap</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">C</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">C</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Microsoft
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Microsoft
           Excel</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Tableau
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Tableau
           Desktop</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Microsoft
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Microsoft
           Power BI</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Docker
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Docker
           Desktop</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           EC2</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           S3</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           RDS</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           DynamoDB</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           Aurora</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           Lambda</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           SageMaker</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">AWS
           QuickSight</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">MySQL</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">MySQL</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">PostgreSQL</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">PostgreSQL</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Machine
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Machine
           Learning</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Statistical
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Statistical
           Data Modeling</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Prompt
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Prompt
           Engineering</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Data
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Data
           Visualization</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">GitHub</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">GitHub</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Visual
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Visual
           Studio Code</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">PyCharm</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">PyCharm</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Visual
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Visual
           Studio</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Atom</span>
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Atom</span>
       </div>
     </section>
 
@@ -585,17 +580,16 @@
       <h2 class="text-4xl font-bold mb-6 backdrop-blur-lg w-fit">Languages</h2>
       <div class="backdrop-blur-sm flex flex-wrap font-mono gap-4 md:gap-6 text-base md:text-lg">
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">English
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">English
           (Fluent)</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Hindi
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Hindi
           (Native)</span>
         <span
-          class="hover-text-green dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Malayalam
+          class="skill-item dark:bg-zinc-800/75 backdrop-blur-md border border-gray-200 dark:border-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded-2xl shadow-lg text-base md:text-lg">Malayalam
           (Native)</span>
       </div>
     </section>
-    <!-- My resume ends above this -->
 
     <!-- Section-7: Contact Me -->
     <section id="contact"
@@ -617,9 +611,9 @@
   </main>
 
   <footer
-    class="mt-auto py-4 text-center text-sm font-medium dark:text-gray-300 w-full dark:bg-zinc-900/75 backdrop-blur-2xl"
-    style="padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-bottom: env(safe-area-inset-bottom);">
-    © 2025 Alfin Abraham. All rights reserved.</footer>
+  class="mt-auto py-4 text-center text-sm font-medium dark:text-gray-300 w-full dark:bg-zinc-900/75 backdrop-blur-2xl"
+  style="padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-bottom: env(safe-area-inset-bottom);">
+  © 2025 Alfin Abraham. All rights reserved.</footer>
 
   <script>
     let scrollPosition = 0;
@@ -639,7 +633,7 @@
         unlockBodyScroll();
       }
     });
-    // A click outside closes toggle menu
+    // Click outside closes menu
     document.addEventListener('click', (e) => {
       const isClickInsideNav = e.target.closest('nav');
       const isMenuOpen = !mobileMenu.classList.contains('hidden');
@@ -648,14 +642,14 @@
         unlockBodyScroll();
       }
     });
-    // Auto-closes toggle menu and unlocks scroll after link click
+    // Auto-close menu and unlock scroll after link click
     document.querySelectorAll('#mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
         unlockBodyScroll();
       });
     });
-
+    // Helper function to unlock scroll
     function unlockBodyScroll() {
       document.body.style.position = '';
       document.body.style.top = '';
@@ -668,18 +662,19 @@
     const canvas = document.getElementById("background");
     const ctx = canvas.getContext("2d");
     const totalParticles = 250;
-    const fastColor = "#F5A623"; // These are the fast moving particles
+    const fastColor = "#F5A623"; // fast moving particles
     let particles = [];
-    // Initialize the canvas size and particles
+    // Initialize canvas size and particles
     function init() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       document.body.style.backgroundColor = '#060606';
       particles = [];
       for (let i = 0; i < totalParticles; i++) {
-        // Random color and speed assignment to particles
+        // Randomly color and speed assignment
         const color = Math.random() < 0.2 ?
-          fastColor : ["#4A90E2", "#50E3C2", "#9013FE", "#F8E71C", "#FC0303"][Math.floor(Math.random() * 5)];
+          fastColor :
+          ["#4A90E2", "#50E3C2", "#9013FE", "#F8E71C", "#FC0303"][Math.floor(Math.random() * 5)];
         const speed = color === fastColor ? 0.6 : 0.2;
         const angle = Math.random() * 2 * Math.PI;
         particles.push({
